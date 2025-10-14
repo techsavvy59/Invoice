@@ -11,12 +11,12 @@ app.use(cors());
 
 const PORT = process.env.PORT || 5000;
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(join(__dirname, 'build')));
-    app.all('/', (req, res) =>
-        res.sendFile(join(__dirname, 'build', 'index.html'))
-    );
-}
+// if (process.env.NODE_ENV === 'production') {
+//     app.use(express.static(join(__dirname, 'build')));
+//     app.all('/', (req, res) =>
+//         res.sendFile(join(__dirname, 'build', 'index.html'))
+//     );
+// }
 
 app.listen(PORT, () => console.log(`The server has started on port: ${PORT}`));
 
@@ -42,4 +42,4 @@ app.use("/users", require("./routes/userRouter"));
 app.use("/trans", require("./routes/transRouter"));
 app.use("/customers", require("./routes/customerRouter"));
 
-// MONGODB_CONNECTION_STRING=mongodb+srv://pstar:KCHkch1763346@invoice.qy9f5.mongodb.net/invoice?retryWrites=true&w=majority
+MONGODB_CONNECTION_STRING=mongodb+srv://pstar:KCHkch1763346@invoice.qy9f5.mongodb.net/invoice?retryWrites=true&w=majority
